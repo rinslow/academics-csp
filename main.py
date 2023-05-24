@@ -78,7 +78,6 @@ for semester, courses in semester_courses.items():
             amount_of_combinations_to_examine += 1
             if sum(difficulties[course] for course in combination) <= maximum_difficulty_per_semester:
                 semester_domains[semester].append(combination)
-print(f"Examining {amount_of_combinations_to_examine} course combinations")
 
 problem = Problem()
 for semester, domain in semester_domains.items():
@@ -113,8 +112,6 @@ for semester1 in semesters:
 # All courses must be learned
 for course in courses:
     problem.addConstraint(all_courses_must_be_learned, semesters)
-
-print(len(problem.getSolutions()))
 
 # Some courses have dependencies in order
 for i in range(len(semesters)):

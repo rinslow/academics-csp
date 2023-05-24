@@ -120,10 +120,10 @@ for i in range(len(semesters)):
         semester_after = semesters[j]
         problem.addConstraint(dependency_between_courses, [semester_before, semester_after])
 
-# # Study every semester until last semester
-# for i in range(last_semester_to_study + 1):
-#     semester = semesters[i]
-#     problem.addConstraint(lambda s: 0 < len(s), [semester])
+# Study every semester until last semester
+for i in range(last_semester_to_study + 1):
+    semester = semesters[i]
+    problem.addConstraint(lambda s: 0 < len(s), [semester])
 
 # Don't study anymore after last semester
 for i in range(last_semester_to_study + 1, len(semesters)):
